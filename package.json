@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/cuentasalternas52-cmyk/VozSegura#readme",
   "dependencies": {
+    "dotenv": "^17.4.2",
     "express": "^5.2.1"
   }
 }
