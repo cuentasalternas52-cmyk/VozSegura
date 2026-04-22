@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recursos Educativos — VozSegura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body class="app-body">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M11 5.882V19.24a1.76 1.76 0 0 1-3.417.592l-2.147-6.15M18 13a3 3 0 1 0 0-6M5.436 13.683A4.001 4.001 0 0 0 7 6h1.832c4.1 0 7.625-1.234 9.168-3"/></svg></div>
+        <span>VozSegura</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="snav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Inicio</a>
+        <a href="solicitudes.html" class="snav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>Mis solicitudes</a>
+        <a href="recursos.html" class="snav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Recursos educativos</a>
+        <a href="perfil.html" class="snav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi perfil</a>
+      </nav>
+      <button class="sidebar-logout" onclick="logout()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Cerrar sesión</button>
+    </aside>
+
+    <main class="app-main">
+      <header class="app-topbar">
+        <div></div>
+        <div class="topbar-right">
+          <button class="topbar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg></button>
+          <div class="topbar-avatar" id="userAvatar">N</div>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <h2 class="page-title">Módulo educativo</h2>
+        <p class="page-sub">Accede a información y recursos importantes.</p>
+
+        <div class="recursos-list">
+
+          <a href="#" class="recurso-item" onclick="openRecurso(event, 'derechos')">
+            <div class="ri-icon ri-purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div class="ri-content">
+              <div class="ri-num">#1 Derechos legales</div>
+              <div class="ri-desc">Conoce los derechos legales y protecciones disponibles para las mujeres</div>
+            </div>
+            <svg class="ri-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+
+          <a href="#" class="recurso-item" onclick="openRecurso(event, 'violencia')">
+            <div class="ri-icon ri-red">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="ri-content">
+              <div class="ri-num">#2 Prevención de violencia</div>
+              <div class="ri-desc">Aprende cómo prevenir y actuar ante situaciones de violencia</div>
+            </div>
+            <svg class="ri-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+
+          <a href="#" class="recurso-item" onclick="openRecurso(event, 'emergencia')">
+            <div class="ri-icon ri-green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2.69h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="ri-content">
+              <div class="ri-num">#3 Líneas de emergencia</div>
+              <div class="ri-desc">Encuentra números y contactos útiles para emergencias</div>
+            </div>
+            <svg class="ri-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+
+          <a href="#" class="recurso-item" onclick="openRecurso(event, 'talleres')">
+            <div class="ri-icon ri-orange">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="ri-content">
+              <div class="ri-num">#4 Talleres</div>
+              <div class="ri-desc">Participa en talleres y actividades de formación</div>
+            </div>
+            <svg class="ri-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- RECURSO DETAIL MODAL -->
+      <div class="recurso-modal" id="recursoModal" style="display:none">
+        <div class="recurso-modal-inner">
+          <button class="modal-close" onclick="closeRecurso()">✕</button>
+          <h3 id="modalTitle"></h3>
+          <div id="modalContent" class="modal-content-body"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <button class="fab-chat" id="fabBtn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
+  <div class="chat-modal" id="chatModal">
+    <div class="chat-modal-header"><div class="chat-modal-title"><div class="brand-icon xs"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M11 5.882V19.24a1.76 1.76 0 0 1-3.417.592l-2.147-6.15M18 13a3 3 0 1 0 0-6M5.436 13.683A4.001 4.001 0 0 0 7 6h1.832c4.1 0 7.625-1.234 9.168-3"/></svg></div>VozSegura IA</div><button class="chat-close-btn" onclick="toggleChat()">✕</button></div>
+    <div class="chat-messages" id="chatMessages"><div class="cmsg bot"><div class="cmsg-avatar">VS</div><div class="cmsg-bubble">Hola 👋 ¿En qué puedo ayudarte?</div></div></div>
+    <div class="chat-input-area"><input type="text" id="chatInput" class="chat-input" placeholder="Escribe tu mensaje..." autocomplete="off"/><button class="chat-send-btn" onclick="sendChatMessage()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button></div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+  <script>
+  const RECURSOS_DATA = {
+    derechos: {
+      title: '#1 Derechos legales',
+      content: `<p><strong>Derechos fundamentales de la mujer en Colombia:</strong></p>
+      <ul>
+        <li>Ley 1257 de 2008 — Protección contra violencia y discriminación</li>
+        <li>Derecho a una vida libre de violencia (Constitución Art. 42)</li>
+        <li>Igualdad de remuneración laboral (Ley 1496 de 2011)</li>
+        <li>Fuero de maternidad y estabilidad laboral reforzada</li>
+        <li>Acceso gratuito a medidas de protección en comisarías de familia</li>
+      </ul>
+      <p>Puedes consultar con un defensor público de forma gratuita llamando a la <strong>Defensoría del Pueblo: 018000914814</strong></p>`
+    },
+    violencia: {
+      title: '#2 Prevención de violencia',
+      content: `<p><strong>Señales de alerta y pasos a seguir:</strong></p>
+      <ul>
+        <li>Documenta los incidentes con fecha, hora y descripción</li>
+        <li>Guarda mensajes, fotos o evidencias en lugar seguro</li>
+        <li>Confía en personas de confianza sobre tu situación</li>
+        <li>Conoce las rutas de evacuación de tu hogar</li>
+        <li>Ten un kit de emergencia listo (documentos, efectivo, ropa)</li>
+      </ul>
+      <p><strong>Recuerda:</strong> Si estás en peligro inmediato, llama al <strong>123</strong> (Policía).</p>`
+    },
+    emergencia: {
+      title: '#3 Líneas de emergencia',
+      content: `<p><strong>Números de emergencia en Colombia:</strong></p>
+      <ul>
+        <li>🚔 <strong>123</strong> — Policía Nacional</li>
+        <li>📞 <strong>155</strong> — Comisarías de familia / Violencia doméstica</li>
+        <li>⚖️ <strong>122</strong> — Fiscalía General (denuncias)</li>
+        <li>🧠 <strong>106</strong> — Línea de salud mental</li>
+        <li>👶 <strong>141</strong> — ICBF (familias y niñez)</li>
+        <li>🏥 <strong>132</strong> — Defensoría del Pueblo</li>
+      </ul>
+      <p>Todas las líneas son <strong>gratuitas y confidenciales</strong>.</p>`
+    },
+    talleres: {
+      title: '#4 Talleres y formación',
+      content: `<p><strong>Recursos de formación disponibles:</strong></p>
+      <ul>
+        <li>Talleres de empoderamiento femenino — ONU Mujeres Colombia</li>
+        <li>Formación en liderazgo y derechos — CPEM (Consejería Presidencial)</li>
+        <li>Grupos de apoyo psicosocial — Red de Mujeres</li>
+        <li>Cursos virtuales gratuitos — SENA (equidad de género)</li>
+      </ul>
+      <p>Visita <a href="https://colombia.unwomen.org" target="_blank">colombia.unwomen.org</a> para más información.</p>`
+    }
+  };
+
+  function openRecurso(e, key) {
+    e.preventDefault();
+    const data = RECURSOS_DATA[key];
+    document.getElementById('modalTitle').textContent = data.title;
+    document.getElementById('modalContent').innerHTML = data.content;
+    document.getElementById('recursoModal').style.display = 'flex';
+  }
+  function closeRecurso() {
+    document.getElementById('recursoModal').style.display = 'none';
+  }
+  </script>
+</body>
+</html>

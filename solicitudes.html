@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solicitud de Ayuda — VozSegura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body class="app-body">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M11 5.882V19.24a1.76 1.76 0 0 1-3.417.592l-2.147-6.15M18 13a3 3 0 1 0 0-6M5.436 13.683A4.001 4.001 0 0 0 7 6h1.832c4.1 0 7.625-1.234 9.168-3"/></svg></div>
+        <span>VozSegura</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="snav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Inicio</a>
+        <a href="solicitudes.html" class="snav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Mis solicitudes</a>
+        <a href="recursos.html" class="snav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Recursos educativos</a>
+        <a href="perfil.html" class="snav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>Mi perfil</a>
+      </nav>
+      <button class="sidebar-logout" onclick="logout()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Cerrar sesión</button>
+    </aside>
+
+    <main class="app-main">
+      <header class="app-topbar">
+        <div></div>
+        <div class="topbar-right">
+          <button class="topbar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg></button>
+          <div class="topbar-avatar" id="userAvatar">N</div>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <h2 class="page-title">Solicitud de ayuda</h2>
+        <p class="page-sub">Describe tu situación para recibir apoyo y orientación segura.</p>
+
+        <!-- Illustration accent -->
+        <div class="page-ilu-accent">
+          <svg viewBox="0 0 160 180" fill="none" width="160">
+            <circle cx="80" cy="60" r="32" fill="#EDE9FE" opacity=".6"/>
+            <ellipse cx="80" cy="130" rx="40" ry="45" fill="#DDD6FE" opacity=".5"/>
+            <circle cx="80" cy="57" r="22" fill="#FBBF7A" opacity=".9"/>
+            <circle cx="80" cy="57" r="13" fill="#F59E0B" opacity=".8"/>
+            <path d="M60 78 Q55 95 57 110" stroke="#7C3AED" stroke-width="10" stroke-linecap="round"/>
+            <path d="M100 78 Q105 95 103 110" stroke="#7C3AED" stroke-width="10" stroke-linecap="round"/>
+            <!-- question mark phone -->
+            <rect x="62" y="100" width="22" height="36" rx="4" fill="#9333EA" opacity=".8"/>
+            <text x="73" y="122" text-anchor="middle" font-size="16" fill="#fff" font-weight="bold">?</text>
+          </svg>
+        </div>
+
+        <div id="successMsg" class="success-banner" style="display:none">
+          ✅ Tu solicitud fue enviada. Te contactaremos pronto.
+        </div>
+
+        <form class="solicitud-form" id="solicitudForm" novalidate>
+          <div class="sform-group">
+            <label>Tipo de situación</label>
+            <div class="select-wrap">
+              <select id="tipoSituacion" required>
+                <option value="">Selecciona el tipo de situación</option>
+                <option value="violencia_fisica">Violencia física</option>
+                <option value="violencia_psicologica">Violencia psicológica</option>
+                <option value="violencia_sexual">Violencia sexual</option>
+                <option value="acoso_laboral">Acoso laboral</option>
+                <option value="discriminacion">Discriminación de género</option>
+                <option value="otro">Otro</option>
+              </select>
+              <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+
+          <div class="sform-group">
+            <label>Descripción</label>
+            <textarea id="descripcion" placeholder="Describe la situación que estás enfrentando" rows="4" required></textarea>
+          </div>
+
+          <div class="sform-group">
+            <label>Nivel de urgencia</label>
+            <div class="urgencia-radio">
+              <label class="radio-opt">
+                <input type="radio" name="urgencia" value="baja"/>
+                <span class="radio-pill baja">Baja</span>
+              </label>
+              <label class="radio-opt">
+                <input type="radio" name="urgencia" value="media"/>
+                <span class="radio-pill media">Media</span>
+              </label>
+              <label class="radio-opt">
+                <input type="radio" name="urgencia" value="alta" checked/>
+                <span class="radio-pill alta">Alta <span class="urgencia-dot">●</span></span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-purple btn-full" id="enviarBtn">
+            <span id="enviarText">Enviar</span>
+            <span id="enviarSpinner" class="spinner" style="display:none"></span>
+          </button>
+
+          <div class="confidencial-note center">🔒 Tu información es confidencial y protegida.</div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <button class="fab-chat" id="fabBtn" title="Chat con IA"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
+  <div class="chat-modal" id="chatModal">
+    <div class="chat-modal-header"><div class="chat-modal-title"><div class="brand-icon xs"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M11 5.882V19.24a1.76 1.76 0 0 1-3.417.592l-2.147-6.15M18 13a3 3 0 1 0 0-6M5.436 13.683A4.001 4.001 0 0 0 7 6h1.832c4.1 0 7.625-1.234 9.168-3"/></svg></div>VozSegura IA</div><button class="chat-close-btn" onclick="toggleChat()">✕</button></div>
+    <div class="chat-messages" id="chatMessages"><div class="cmsg bot"><div class="cmsg-avatar">VS</div><div class="cmsg-bubble">Hola 👋 ¿En qué puedo ayudarte hoy?</div></div></div>
+    <div class="chat-input-area"><input type="text" id="chatInput" class="chat-input" placeholder="Escribe tu mensaje..." autocomplete="off"/><button class="chat-send-btn" onclick="sendChatMessage()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button></div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

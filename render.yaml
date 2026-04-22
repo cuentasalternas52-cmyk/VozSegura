@@ -1,0 +1,38 @@
+# ===================================
+# VOZSEGURA — RENDER DEPLOYMENT
+# ===================================
+# Documentación: https://render.com/docs/render-yaml
+
+services:
+  - type: web
+    name: vozsegura
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      # ⚠️  Los siguientes valores DEBES configurarlos manualmente
+      #    en el panel de Render > Environment
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_SSL
+        value: true          # PlanetScale y Railway requieren SSL
+      - key: JWT_SECRET
+        generateValue: true  # Render genera uno automático
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
