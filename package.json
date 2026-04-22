@@ -1,0 +1,25 @@
+{
+  "name": "vozsegura",
+  "version": "1.0.0",
+  "description": "Plataforma de apoyo para mujeres con IA, login y despliegue en Render.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuentasalternas52-cmyk/VozSegura.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cuentasalternas52-cmyk/VozSegura/issues"
+  },
+  "homepage": "https://github.com/cuentasalternas52-cmyk/VozSegura#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
