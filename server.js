@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
-const authRoutes = require('./routes/auth');
+//const authRoutes = require('./routes/auth');
 const chatRoutes = require('./routes/chat');
 const solicitudesRoutes = require('./routes/solicitudes');
 
@@ -14,7 +14,7 @@ app.use(cors({ origin: process.env.FRONTEND_URL || '*', methods: ['GET','POST','
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-app.use('/api/auth', authRoutes);
+//app.use('/api/auth', authRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/solicitudes', solicitudesRoutes);
 
